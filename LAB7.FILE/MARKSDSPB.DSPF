@@ -1,0 +1,52 @@
+000001171123     A          R RECORD1                   CF03(03 'Exit')
+000002171123     A                                  2 31'Marks Calculator'
+000003171123     A                                  2  4'Nahal Esmaeili'
+000005171123     A                                  2 65DATE EDTCDE(Y)
+000006171123     A                                  3  4SYSNAME
+000007171123     A                                  3 65TIME
+000008171123     A                                  5 24'Test1:'
+000009171123     A            TEST1          3S 0B  5 33RANGE(0 100)
+000010171123     A  31                              5 39'This Test Mark Dropped'
+000011171123     A                                  6 24'Test2:'
+000012171123     A            TEST2          3S 0B  6 33RANGE(0 100)
+000013171123     A  32                              6 39'This Test Mark Dropped'
+000014171123     A                                  7 24'Test3:'
+000015171123     A            TEST3          3S 0B  7 33RANGE(0 100)
+000016171123     A  33                              7 39'This Test Mark Dropped'
+000017171123     A                                  8 24'Labs:'
+000018171123     A            LABS           2S 0B  8 34RANGE(0 30)
+000019171123     A                                  9 24'Exam:'
+000020171123     A            EXAM           3S 0B  9 33RANGE(0 100)
+000021171123     A  34                              9 39'Automatic F with Exam below 50'
+000022171123     A                                      COLOR(RED)
+000035171123     A          R RECORD2                   OVERLAY
+000036171123     A                                      CF03(03 'Exit')
+000037171123     A                                 11 18'Tests:'
+000038171123     A            TESTOVRALL     3Y 0O 11 33EDTCDE(1)
+000039171123     A  35                             11 39'Automatic F with Test Average belo-
+000040171123     A                                      w 50'
+000041171123     A                                      COLOR(RED)
+000042171123     A                                 12 18'Final Mark:'
+000043171123     A            NUMGRADE       3Y 0O 12 33EDTCDE(1)
+000044171123     A                                 13 18'Final Grade:'
+000045171123     A            LETGRADE       2   O 13 34
+000046171123     A                                 19  3'F3=Exit'
+000047171123     A          R RECORD3                   CF03(03 'Exit')
+000048171123     A                                  2  4'Nahal Esmaeili'
+000049171123     A                                  2 34'Marks Statistics'
+000050171123     A                                  2 65DATE
+000051171123     A                                      EDTCDE(Y)
+000052171123     A                                  3 65TIME
+000053171123     A                                  3  4SYSNAME
+000054171123     A                                  6 35'Pass:'
+000055171123     A            PASSES         3Y 0O  6 43EDTCDE(1)
+000057171123     A                                  8 35'Fail:'
+000058171123     A            FAILURES       3Y 0O  8 43EDTCDE(1)
+000059171123     A                                 10 21'Total Mark Queries:'
+000060171123     A            NUMQUERY       3Y 0O 10 43EDTCDE(1)
+000061171123     A            TOTALGRADE     3Y 0O 15 41EDTCDE(1)
+000062171123     A                                      DSPATR(ND)
+000063171123     A                                 12 26'Average Grade:'
+000064171123     A            TOTALAVG       3Y 0O 12 43EDTCDE(1)
+000065171123     A                                 19  3'F3=Exit'
+000067171123

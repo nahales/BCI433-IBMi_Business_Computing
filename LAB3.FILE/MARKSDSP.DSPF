@@ -1,0 +1,25 @@
+000002171015     A          R RECORD1                   CF03(03 'Exit')
+000003171011     A                                  2 31'Marks Calculator'
+000004171011     A                                  2  4USER
+000005171011     A                                  3  4SYSNAME
+000006171123     A                                  2 65DATE EDTCDE(Y)
+000008171011     A                                  3 65TIME
+000009171011     A                                  5 24'Test1:'
+000010171015     A            TEST1          3S 0B  5 33RANGE(0 100)
+000011171011     A                                  6 24'Test2:'
+000012171015     A            TEST2          3S 0B  6 33RANGE(0 100)
+000013171011     A                                  7 24'Test3:'
+000014171015     A            TEST3          3S 0B  7 33RANGE(0 100)
+000015171011     A                                  8 24'Labs:'
+000016171015     A            LABS           2S 0B  8 34RANGE(0 30)
+000017171011     A                                  9 24'Exam:'
+000018171015     A            EXAM           3S 0B  9 33RANGE(0 100)
+000020171015     A          R RECORD2                   OVERLAY
+000021171015     A                                      CF03(03 'Exit')
+000022171011     A                                 11 18'Tests:'
+000023171015     A            TESTOVRALL     3Y 0O 11 33EDTCDE(1)
+000024171011     A                                 12 18'Final Mark:'
+000025171015     A            NUMGRADE       3Y 0O 12 33EDTCDE(1)
+000026171015     A                                 13 18'Final Grade:'
+000027171015     A            LETGRADE       2   O 13 34
+000028171011     A                                 19  3'F3=Exit'

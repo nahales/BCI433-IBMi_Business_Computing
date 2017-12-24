@@ -1,0 +1,28 @@
+000003171121     A          R RECORD1                   CF03(03 'Exit')
+000004171122     A                                      CF21(21 'QUSCMDLN')
+000005171122     A                                  2  4'Nahal Esmaeili'
+000007171121     A                                  2 39'Lab 4'
+000009171122     A                                  2 71DATE EDTCDE(Y)
+000011171122     A                                  3 71TIME
+000012171121     A                                  6  4'Please select one of the following-
+000013171121     A                                       options:'
+000014171121     A                                  8 15'1. Currency Symbol Used by this Sy-
+000015171121     A                                      stem'
+000016171121     A                                  9 15'2. IPL type (Initial Program Load -
+000017171121     A                                      for System Reboot)'
+000018171122     A                                 10 15'3. Signed on User''s Message Queue'
+000019171122     A                                 11 15'4. Initial number of active jobs f-
+000020171122     A                                      or storage allocation'
+000021171122     A                                 12 15'5. Display System Serial Number'
+000022171122     A                                 13 15'6. Maximum Password Length'
+000023171124     A                                 14 15'7. Previous sign on by signed on u-
+000025171124     A                                      ser'
+000026171124     A                                 16 17'Option:'
+000027171124     A            OPTION         2   B 16 25
+000028171121     A  30                                  DSPATR(RI)
+000029171121     A  30                                  DSPATR(PC)
+000030171124     A  30                             16 29'A valid option must be entered'
+000031171124     A                                      COLOR(RED)
+000032171121     A            MSGTXT        70   O 18  6
+000033171121     A                                 20  4'F3=Exit'
+000034171121     A                                 20 24'F21=Command Line'

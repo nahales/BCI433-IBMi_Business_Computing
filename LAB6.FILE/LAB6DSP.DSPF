@@ -1,0 +1,28 @@
+000100171214     A          R RECORD1
+000101171214     A                                  2 30'Payroll Program'
+000102171214     A                                  3  3'Nahal Esmaeili'
+000103171214     A                                  2  3USER
+000104171214     A                                  5 14'Rates:'
+000105171214     A                                  9 13'Totals:'
+000106171214     A                                  5 21'Day Rate '
+000107171214     A                                  6 21'Afternoon Rate'
+000108171214     A                                  7 21'Night Rate'
+000109171214     A                                  9 21'Regular Pay'
+000110171214     A                                 10 21'Overtime Pay'
+000111171214     A                                 11 21'Company Payout'
+000112171214     A            DAYRATE   R        O  5 41REFFLD(SHIFTRATES/DAYRATE +
+000113171214     A                                      SENECAPAY/SHIFTRATES)
+000114171214     A                                      EDTCDE(2)
+000115171214     A            NIGHTRATE R        O  6 41REFFLD(SHIFTRATES/NIGHTRATE +
+000116171214     A                                      SENECAPAY/SHIFTRATES)
+000117171214     A                                      EDTCDE(2)
+000118171214     A            AFTNRATE  R        O  7 41REFFLD(SHIFTRATES/AFTNRATE +
+000119171214     A                                      SENECAPAY/SHIFTRATES)
+000120171214     A                                      EDTCDE(2)
+000121171214     A                                  2 61DATE
+000122171214     A                                      EDTCDE(Y)
+000123171214     A            TOTREGPAY      9  2O  9 41EDTCDE(1 $)
+000124171214     A            TOTOVTPAY      9  2  10 41EDTCDE(1 $)
+000125171214     A            TOTEMPPAY      9  2  11 41EDTCDE(1 $)
+000126171214     A            SHIFTTYPE     30   O  8 22
+000127171214

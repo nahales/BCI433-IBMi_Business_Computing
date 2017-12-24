@@ -1,0 +1,58 @@
+000001171125     A          R TITLE
+000002171125     A                                  1  3DATE(*YY)
+000004171125     A                                      EDTCDE(Y)
+000005171125     A                                  1 15TIME
+000006171125     A                                  1 44'Weekly Payroll Report'
+000007171125     A                                  1 88'Page:'
+000008171125     A                                  1 93PAGNBR
+000009171125     A                                  2  3'Name:'
+000010171215     A                                  2  9'Nahal Esmaeili'
+000011171219     A            SHIFTTYPE     30      2 44
+000012171125     A          R COLHDG                    SPACEB(1)
+000013171125     A                                     6'Employee'
+000014171125     A                                      SPACEB(1)
+000015171125     A                                    19'Work'
+000016171125     A                                    29'Pay'
+000017171125     A                                    37'Hourly'
+000018171125     A                                    47'Hours'
+000019171125     A                                    56'Regular'
+000020171125     A                                    71'Overtime'
+000021171125     A                                    89'Total'
+000022171125     A                                     7'Number'
+000023171125     A                                      SPACEB(1)
+000024171125     A                                    19'Shift'
+000025171125     A                                    29'Grade'
+000026171125     A                                    38'Rate'
+000027171125     A                                    47'Worked'
+000028171125     A                                    58'Pay'
+000033171125     A                                    74'Pay'
+000034171125     A                                    90'Pay'
+000043171125     A          R EMPDETAIL                 SPACEB(2)
+000044171125     A            EMPNUM    R    9S        4
+000045171125     A                                      REFFLD(ALLSHIFT/EMPNUM SENECAPAY/AL-
+000046171125     A                                      LSHIFT)
+000047171125     A                                      EDTWRD('0  -   -   ')
+000049171125     A            WORKSHIFT R    1A       20REFFLD(ALLSHIFT/WORKSHIFT +
+000050171125     A                                      SENECAPAY/ALLSHIFT)
+000052171125     A            PAYGRADE  R             30REFFLD(ALLSHIFT/PAYGRADE +
+000053171125     A                                      SENECAPAY/ALLSHIFT)
+000055171125     A            HOURLYRATE     5  2     37EDTCDE(1)
+000057171125     A            HRSWORKED R             48REFFLD(ALLSHIFT/HRSWORKED +
+000058171125     A                                      SENECAPAY/ALLSHIFT)
+000060171125     A            REGULARPAY     7  2     55EDTCDE(1)
+000062171201     A            OVERPAY        7  2     70EDTCDE(3)
+000064171125     A            TOTALPAY       7  2     86EDTCDE(1)
+000066171125     A          R TOTALS                    SPACEB(2)
+000067171125     A                                    41'Totals:'
+000068171125     A            TOTREGPAY      9  2     51EDTCDE(1 $)
+000069171125     A            TOTOVTPAY      9  2     66EDTCDE(1 $)
+000070171125     A            TOTEMPPAY      9  2     82EDTCDE(1 $)
+000071171125     A*%%RS+<record-sequences>
+000072171125     A*%%RS+ <sequence name="Report1">
+000073171125     A*%%RS+  <device type="printer" width="132" height="66" />
+000074171125     A*%%RS+  <record-write record-format="TITLE" />
+000075171125     A*%%RS+  <record-write record-format="COLHDG" />
+000076171125     A*%%RS+  <record-write record-format="EMPDETAIL" />
+000077171125     A*%%RS+  <record-write record-format="TOTALS" />
+000078171125     A*%%RS+ </sequence>
+000079171125     A*%%RS </record-sequences>

@@ -1,0 +1,20 @@
+000001171125     A          R RECORD1
+000002171125     A                                  2  4USER
+000003171125     A                                  2 28'Payroll Program Completed'
+000004171125     A                                  2 66DATE EDTCDE(Y)
+000006171125     A                                  3  4'Nahal Esmaeili'
+000007171125     A                                  5 10'Rates:'
+000009171125     A                                  7 19'Day Rate:'
+000010171125     A            DAYRATE        5  2   7 37EDTCDE(1)
+000011171125     A                                  8 19'Afternoon Rate:'
+000012171125     A            AFTNRATE       5  2   8 37EDTCDE(1)
+000013171125     A                                  9 19'Night Rate:'
+000016171125     A            NIGHTRATE      5  2   9 37EDTCDE(1)
+000018171125     A                                 11 11'Totals:'
+000019171125     A                                 13 19'Regular Pay:'
+000020171127     A            TOTREGPAY      9Y 2O 13 37EDTCDE(1)
+000021171125     A                                 14 19'Overtime Pay:'
+000022171127     A            TOTOVTPAY      9Y 2O 14 37EDTCDE(1)
+000023171125     A                                 15 19'Company Payout:'
+000024171127     A            TOTEMPPAY      9Y 2O 15 37EDTCDE(1)
+000100      

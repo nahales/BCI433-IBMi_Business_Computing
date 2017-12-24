@@ -1,0 +1,99 @@
+000100171122
+000101171121             PGM
+000102171121             DCLF       LAB4DF
+000103171122             DCL        &QCURSYM *CHAR 1
+000104171122             DCL        &IPLTYPE *CHAR 1
+000105171124             DCL        &MSGQ *CHAR 10
+000106171124             DCL        &MSGQLIB *CHAR 10
+000109171124             DCL        &QSRLNBR *CHAR 8
+000110171122             DCL        &QACTJOB *DEC 5
+000111171122             DCL        &QACTJOBSTR *CHAR 5
+000113171122             DCL        &QPWDMAXLEN *DEC 3
+000114171124             DCL        &QPWDMXLSTR *CHAR 3
+000115171124             DCL        &PRVSIGN *CHAR 13
+000116171124             DCL        &USERNAME *CHAR 10
+000117171124             DCL        &DATE *CHAR 8
+000118171124             DCL        &TIME *CHAR 8
+000122171122
+000123171121                            /***** MAINLINE *****/
+000124171122             SNDRCVF
+000125171122             DOWHILE    (&IN03 = '0')
+000126171121
+000127171122                SELECT
+000128171122                   WHEN       (&OPTION = '1' *OR &OPTION = '01') DO
+000129171122                      RTVSYSVAL  SYSVAL(QCURSYM) RTNVAR(&QCURSYM)
+000130171124                      CHGVAR     &MSGTXT ('The currency symbol is set to' *BCAT &QCURSYM)
+000131171122                   ENDDO
+000132171122                   WHEN       (&OPTION = '2' *OR &OPTION = '02') CALLSUBR   OPTION2
+000133171122                   WHEN       (&OPTION = '3' *OR &OPTION = '03') DO
+000134171124                      RTVUSRPRF  MSGQ(&MSGQ) MSGQLIB(&MSGQLIB)
+000135171124                      CHGVAR     VAR(&MSGTXT) VALUE('Signed on User''s message queue is' *BCAT +
+000136171124                                   &MSGQLIB *TCAT '/' *CAT &MSGQ)
+000137171122                   ENDDO
+000138171122                   WHEN       (&OPTION = '4' *OR &OPTION = '04') DO
+000139171122                      RTVSYSVAL  SYSVAL(QACTJOB) RTNVAR(&QACTJOB)
+000140171122                      CHGVAR     &QACTJOBSTR &QACTJOB
+000141171124                      CHGVAR     &MSGTXT ('Initial number of active jobs for which storage is +
+000142171124                                   allocated is:' *BCAT &QACTJOBSTR)
+000143171122                   ENDDO
+000144171122                   WHEN       (&OPTION = '5' *OR &OPTION = '05') DO
+000145171122                      RTVSYSVAL  SYSVAL(QSRLNBR) RTNVAR(&QSRLNBR)
+000146171124                      CHGVAR     &MSGTXT ('The system serial number is' *BCAT &QSRLNBR)
+000149171122                   ENDDO
+000150171122                   WHEN       (&OPTION = '6' *OR &OPTION = '06') DO
+000151171122                      RTVSYSVAL  SYSVAL(QPWDMAXLEN) RTNVAR(&QPWDMAXLEN)
+000152171124                      CHGVAR     &QPWDMXLSTR &QPWDMAXLEN
+000153171124                      CHGVAR     &MSGTXT ('Maximum password length is' *BCAT &QPWDMXLSTR)
+000155171122                   ENDDO
+000156171124                   WHEN       (&OPTION = '7' *OR &OPTION = '07') CALLSUBR OPTION7
+000157171124              /*   WHEN       (&IN21 = '1')   CALL QUSCMDLN            */
+000158171122                   OTHERWISE  CHGVAR &IN30 '1'
+000159171122                ENDSELECT
+000160171124                SELECT
+000161171124                   WHEN       (&IN21 = '1')   CALL QUSCMDLN
+000162171124                ENDSELECT
+000163171124
+000164171122                SNDRCVF
+000165171122                CALLSUBR   INITIALIZE
+000166171122             ENDDO
+000167171121
+000168171121                            /***** SUBROUTINES *****/
+000169171121             SUBR       OPTION2
+000170171122                RTVSYSVAL  SYSVAL(QIPLTYPE) RTNVAR(&IPLTYPE)
+000171171122                SELECT
+000172171124                   WHEN       (&IPLTYPE = '0')  CHGVAR     &MSGTXT ('IPL status indicator is' +
+000173171124                                *BCAT &IPLTYPE *BCAT '= Operator Panel IPL')
+000174171122
+000175171122                   WHEN       (&IPLTYPE = '1')  CHGVAR     &MSGTXT ('Initial Program Load is' +
+000176171122                                *BCAT &IPLTYPE *BCAT ' which is Attended IPL, dedicated +
+000177171122                                service tools')
+000178171122
+000179171122                   WHEN       (&IPLTYPE = '2')  CHGVAR     &MSGTXT ('Initial Program Load is' +
+000180171122                                *BCAT &IPLTYPE *BCAT 'which is Attended IPL, console in debug +
+000181171122                                mode')
+000182171122                ENDSELECT
+000183171122             ENDSUBR
+000184171122
+000185171124             SUBR       OPTION7
+000186171124                RTVUSRPRF  PRVSIGN(&PRVSIGN) USRPRF(*CURRENT)
+000187171124                RTVUSRPRF  RTNUSRPRF(&USERNAME) USRPRF(*CURRENT)
+000188171124                CHGVAR     VAR(&DATE) VALUE(%SST(&PRVSIGN 4 2) *CAT '/' *CAT %SST(&PRVSIGN 6 +
+000189171124                             2) *CAT '/' *CAT %SST(&PRVSIGN 2 2))
+000190171124                CHGVAR     VAR(&TIME) VALUE(%SST(&PRVSIGN 8 2) *CAT ':' *CAT %SST(&PRVSIGN 10 +
+000191171124                             2) *CAT ':' *CAT %SST(&PRVSIGN 12 2))
+000192171124                CHGVAR     VAR(&MSGTXT) VALUE('Previous sign on for user ' *BCAT &USERNAME +
+000193171124                             *BCAT 'was on ' *CAT &DATE *BCAT &TIME)
+000194171124             ENDSUBR
+000195171124
+000196171122             SUBR       INITIALIZE
+000197171122                CHGVAR     &IN30 '0'
+000198171122                CHGVAR     &MSGTXT ' '
+000199171122             ENDSUBR
+000200171124
+000201171122             ENDPGM
+000202171124
+000203171122
+000204171122
+000205171121
+000206171121
+000207171121
